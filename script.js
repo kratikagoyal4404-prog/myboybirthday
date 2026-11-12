@@ -76,17 +76,7 @@ $("#blow-candles").addEventListener("click",()=>{
 function openGift(){const gift=$("#open-gift");gift.classList.add("open");$("#surprise-message").hidden=false;$("#gift-cta").textContent="A SURPRISE JUST FOR YOU ♡";confetti();}
 $("#open-gift").addEventListener("click",openGift);$("#gift-cta").addEventListener("click",openGift);
 
-// Music is opt-in. The chosen audio file is not uploaded to the website.
-const audio=$("#birthday-audio"),musicStatus=$("#music-status"),musicToggle=$("#music-toggle"),musicMute=$("#music-mute");
-let audioUrl=null;
-$("#music-upload").addEventListener("change",e=>{
- const file=e.target.files[0];if(!file)return;
- if(audioUrl)URL.revokeObjectURL(audioUrl);audioUrl=URL.createObjectURL(file);audio.src=audioUrl;
- musicStatus.textContent=file.name;musicToggle.disabled=false;musicMute.disabled=false;musicToggle.textContent="▶";
-});
-musicToggle.addEventListener("click",async()=>{if(audio.paused){try{await audio.play();musicToggle.textContent="Ⅱ";}catch(e){musicStatus.textContent="Tap play to try again";}}else{audio.pause();musicToggle.textContent="▶";}});
-musicMute.addEventListener("click",()=>{audio.muted=!audio.muted;musicMute.textContent=audio.muted?"×":"♪";});
-
+// Music is provided through the official YouTube player embedded in the page.
 // Mobile navigation and utility buttons.
 $("#menu").addEventListener("click",()=>$("#nav").classList.toggle("show"));
 $("#nav").addEventListener("click",e=>{if(e.target.tagName==="A")$("#nav").classList.remove("show");});
