@@ -83,4 +83,3 @@ $("#nav").addEventListener("click",e=>{if(e.target.tagName==="A")$("#nav").class
 const backTop=$("#back-top");
 window.addEventListener("scroll",()=>{backTop.style.display=window.scrollY>500?"block":"none";});
 backTop.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
-$("#replay").addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"});confetti();});
