@@ -27,7 +27,17 @@ function readImage(file,callback){if(!file||!file.type.startsWith("image/"))retu
 $("#profile-upload").addEventListener("change",e=>{readImage(e.target.files[0],src=>{const el=$("#profile-photo");el.style.backgroundImage=`url("${src}")`;el.innerHTML="";localStorage.setItem("birthday-profile-photo",src);});});
 try{const saved=localStorage.getItem("birthday-profile-photo");if(saved){$("#profile-photo").style.backgroundImage=`url("${saved}")`;$("#profile-photo").innerHTML="";}}catch(e){}
 const captions=["A face worth taking a million pictures of.","Main character moment.","One for the memories.","Certified birthday boy.","A little dose of happiness.","This smile, always.","Forever photogenic.","The birthday star.","A moment worth keeping.","Just being you.","Picture perfect.","My favourite human."];
-let photos=[];try{photos=JSON.parse(localStorage.getItem("birthday-gallery")||"[]");}catch(e){photos=[];}
+const defaultPhotos = [
+ {src:"images/photo-01.jpg",caption:captions[0]},
+ {src:"images/photo-02.jpg",caption:captions[1]},
+ {src:"images/photo-03.jpg",caption:captions[2]},
+ {src:"images/photo-04.jpg",caption:captions[3]},
+ {src:"images/photo-05.jpg",caption:captions[4]},
+ {src:"images/photo-06.jpg",caption:captions[5]},
+ {src:"images/photo-07.jpg",caption:captions[6]}
+];
+let photos=defaultPhotos;
+try{const saved=JSON.parse(localStorage.getItem("birthday-gallery")||"null");if(Array.isArray(saved)&&saved.length)photos=saved;}catch(e){}
 const gallery=$("#gallery-grid");
 function saveGallery(){try{localStorage.setItem("birthday-gallery",JSON.stringify(photos));}catch(e){alert("Your browser storage is full. Try adding fewer or smaller photos.");}}
 function renderGallery(){
