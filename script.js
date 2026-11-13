@@ -28,14 +28,14 @@ $("#profile-upload").addEventListener("change",e=>{readImage(e.target.files[0],s
 try{const saved=localStorage.getItem("birthday-profile-photo");if(saved){$("#profile-photo").style.backgroundImage=`url("${saved}")`;$("#profile-photo").innerHTML="";}}catch(e){}
 const captions=["A face worth taking a million pictures of.","Main character moment.","One for the memories.","Certified birthday boy.","A little dose of happiness.","This smile, always.","Forever photogenic.","The birthday star.","A moment worth keeping.","Just being you.","Picture perfect.","My favourite human."];
 const defaultPhotos = [
- {src:"images/6122938801069344894.jpg",caption:captions[0]},
- {src:"images/6181424818142954167.jpg",caption:captions[1]},
- {src:"images/6246567385989059491.jpg",caption:captions[2]},
- {src:"images/6246567385989059514.jpg",caption:captions[3]},
- {src:"images/6246567385989059525.jpg",caption:captions[4]},
- {src:"images/6318866146735627132.jpg",caption:captions[5]},
- {src:"images/6318866146735627133.jpg",caption:captions[6]},
- {src:"images/6318866146735627134.jpg",caption:captions[7]}
+ {src:"6122938801069344894.jpg",caption:captions[0]},
+ {src:"6181424818142954167.jpg",caption:captions[1]},
+ {src:"6246567385989059491.jpg",caption:captions[2]},
+ {src:"6246567385989059514.jpg",caption:captions[3]},
+ {src:"6246567385989059525.jpg",caption:captions[4]},
+ {src:"6318866146735627132.jpg",caption:captions[5]},
+ {src:"6318866146735627133.jpg",caption:captions[6]},
+ {src:"6318866146735627134.jpg",caption:captions[7]}
 ];
 let photos=defaultPhotos;
 try{
