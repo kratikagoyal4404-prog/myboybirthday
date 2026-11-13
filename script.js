@@ -26,7 +26,7 @@ updateCountdown();setInterval(updateCountdown,1000);
 function readImage(file,callback){if(!file||!file.type.startsWith("image/"))return;const reader=new FileReader();reader.onload=()=>callback(reader.result);reader.readAsDataURL(file);}
 $("#profile-upload").addEventListener("change",e=>{readImage(e.target.files[0],src=>{const el=$("#profile-photo");el.style.backgroundImage=`url("${src}")`;el.innerHTML="";localStorage.setItem("birthday-profile-photo",src);});});
 const profilePhoto=$("#profile-photo");
-profilePhoto.style.backgroundImage='url("images/mrinmoy-birthday.jpg")';
+profilePhoto.style.backgroundImage='url("mrinmoy-birthday.jpg")';
 profilePhoto.innerHTML="";
 try{const saved=localStorage.getItem("birthday-profile-photo");if(saved){profilePhoto.style.backgroundImage=`url("${saved}")`;}}catch(e){}
 const captions=["A face worth taking a million pictures of.","Main character moment.","One for the memories.","Certified birthday boy.","A little dose of happiness.","This smile, always.","Forever photogenic.","The birthday star.","A moment worth keeping.","Just being you.","Picture perfect.","My favourite human."];
